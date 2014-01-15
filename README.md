@@ -7,9 +7,9 @@ The tests are a bit messy and non-exhaustive but I just wanted a full vertical d
 
 Simply run:
 ```gradle
-gradle clean build integratedTestAuto
+gradle clean build functionalTestAuto
 ```
 
-and it will clean, compile, test and then automatically run the app via tomcat, run the integration tests, and then close the server. In addition because build does not run the integration tests you get finer control.
+and it will clean, compile, test and then automatically run the app via tomcat, run the functional tests, and then close the server. In addition because build does not run the integration tests you get finer control.
 
 I've not licenced this but I ask that you consider uploading any improvements you make to this general framework.
