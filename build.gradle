@@ -104,14 +104,14 @@ tomcatRunWar {
     }
 }
 
-task integrationTest(type: Test) {
+task functionalTest(type: Test) {
     doFirst {
     include '**/*functional*/**'
     //jacoco.reportsDir = file("$buildDir/JacocoReports/Integration")
     }
 }
 
-task integrationTomcatRun() {
+task functionalTomcatRun() {
     doFirst {
     tomcatRunWar.daemon = true
     tomcatRunWar.execute()
@@ -121,14 +121,14 @@ task integrationTomcatRun() {
     }
 }
 
-task integrationTomcatStop(type: org.gradle.api.plugins.tomcat.TomcatStop) {
+task functionalTomcatStop(type: org.gradle.api.plugins.tomcat.TomcatStop) {
     stopPort = tomcatStopPort
     stopKey = tomcatStopKey
 }
 
 
-task integrationTestAuto(dependsOn: integrationTomcatRun) {
-    integrationTomcatStop.execute()
+task functionalTestAuto(dependsOn: functionalTomcatRun) {
+    functionalTomcatStop.execute()
 }
 
 
